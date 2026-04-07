@@ -35,6 +35,9 @@ if ($method === 'POST') {
                     'user' => [
                         'username' => $user['username'],
                         'fullname' => $user['fullname'],
+                        'email' => $user['email'],
+                        'phone' => $user['phone'],
+                        'gender' => $user['gender'],
                         'role' => $user['role']
                     ]
                 ]);
@@ -49,14 +52,28 @@ if ($method === 'POST') {
     // ============ REGISTER ============
     elseif ($action === 'register') {
         $fullname = trim($body['fullname'] ?? '');
+        $email = trim($body['email'] ?? '');
+        $phone = trim($body['phone'] ?? '');
+        $gender = $body['gender'] ?? '';
         $username = trim($body['username'] ?? '');
         $password = $body['password'] ?? '';
         $role = $body['role'] ?? 'staff';
         
         // Validasi
-        if (empty($fullname) || empty($username) || empty($password)) {
-            echo json_encode(['success' => false, 'message' => 'Semua field harus diisi!']);
+        if (empty($fullname) || empty($email) || empty($username) || empty($password)) {
+            echo json_encode(['success' => false, 'message' => 'Nama lengkap, email, username, dan password harus diisi!']);
             exit();
+        }
+        
+        // Validasi email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo json_encode(['success' => false, 'message' => 'Format email tidak valid!']);
+            exit();
+        }
+        
+        // Validasi gender
+        if (!in_array($gender, ['Laki-laki', 'Perempuan'])) {
+            $gender = null;
         }
         
         if (strlen($password) < 4) {
@@ -79,12 +96,22 @@ if ($method === 'POST') {
                 exit();
             }
             
+            // Cek apakah email sudah ada
+            $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+            $stmt->execute([$email]);
+            
+            if ($stmt->fetch()) {
+                echo json_encode(['success' => false, 'message' => 'Email sudah terdaftar! Silakan gunakan email lain.']);
+                exit();
+            }
+            
             // Hash password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             
             // Insert user baru
-            $stmt = $pdo->prepare("INSERT INTO users (fullname, username, password, role, is_active) VALUES (?, ?, ?, ?, 1)");
-            $stmt->execute([$fullname, $username, $hashedPassword, $role]);
+            $stmt = $pdo->prepare("INSERT INTO users (fullname, email, phone, gender, username, password, role, is_active) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, 1)");
+            $stmt->execute([$fullname, $email, $phone, $gender, $username, $hashedPassword, $role]);
             
             echo json_encode([
                 'success' => true,

@@ -1042,20 +1042,33 @@
             <div id="loginError" class="error-msg"></div>
         </div>
         <div id="registerForm" style="display: none;">
-            <h2>📝 Daftar Akun Baru</h2>
-            <input type="text" id="regFullname" placeholder="Nama Lengkap">
-            <input type="text" id="regUsername" placeholder="Username">
-            <input type="password" id="regPassword" placeholder="Password (min. 4 karakter)">
-            <select id="regRole">
-                <option value="staff">📋 Staff</option>
-                <option value="doctor">👨‍⚕️ Dokter</option>
-            </select>
-            <button onclick="doRegister()">Daftar</button>
-            <button class="secondary" onclick="showLoginForm()">← Kembali</button>
-            <div id="registerError" class="error-msg"></div>
-            <div id="registerSuccess" class="success-msg"></div>
-        </div>
-    </div>
+    <h2>📝 Daftar Akun Baru</h2>
+    
+    <input type="text" id="regFullname" placeholder="Nama Lengkap *" required>
+    
+    <input type="email" id="regEmail" placeholder="Email *" required>
+    
+    <input type="tel" id="regPhone" placeholder="Nomor Telepon (contoh: 08123456789)">
+    
+    <select id="regGender">
+        <option value="">-- Pilih Jenis Kelamin --</option>
+        <option value="Laki-laki">👨 Laki-laki</option>
+        <option value="Perempuan">👩 Perempuan</option>
+    </select>
+    
+    <input type="text" id="regUsername" placeholder="Username *" required>
+    
+    <input type="password" id="regPassword" placeholder="Password (min. 4 karakter) *" required>
+    
+    <select id="regRole">
+        <option value="staff">📋 Staff</option>
+        <option value="doctor">👨‍⚕️ Dokter</option>
+    </select>
+    
+    <button onclick="doRegister()">Daftar</button>
+    <button class="secondary" onclick="showLoginForm()">← Kembali ke Login</button>
+    <div id="registerError" class="error-msg"></div>
+    <div id="registerSuccess" class="success-msg"></div>
 </div>
 
 <script>
@@ -1341,11 +1354,18 @@
     }
 
     function showRegisterForm() {
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('registerForm').style.display = 'block';
-        document.getElementById('registerError').textContent = '';
-        document.getElementById('registerSuccess').textContent = '';
-    }
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+    document.getElementById('registerError').textContent = '';
+    document.getElementById('registerSuccess').textContent = '';
+    // Reset semua field
+    document.getElementById('regFullname').value = '';
+    document.getElementById('regEmail').value = '';
+    document.getElementById('regPhone').value = '';
+    document.getElementById('regGender').value = '';
+    document.getElementById('regUsername').value = '';
+    document.getElementById('regPassword').value = '';
+}
 
     function closeAuthModal() {
         document.getElementById('authModal').style.display = 'none';
@@ -1382,35 +1402,83 @@
     }
 
     async function doRegister() {
-        const fullname = document.getElementById('regFullname').value.trim();
-        const username = document.getElementById('regUsername').value.trim();
-        const password = document.getElementById('regPassword').value;
-        const role = document.getElementById('regRole').value;
-        if (!fullname || !username || !password) {
-            document.getElementById('registerError').textContent = 'Semua field harus diisi!';
-            return;
-        }
-        if (password.length < 4) {
-            document.getElementById('registerError').textContent = 'Password minimal 4 karakter!';
-            return;
-        }
-        try {
-            const response = await fetch('login_api.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ action: 'register', fullname, username, password, role })
-            });
-            const result = await response.json();
-            if (result.success) {
-                document.getElementById('registerSuccess').textContent = result.message;
-                setTimeout(() => showLoginForm(), 2000);
-            } else {
-                document.getElementById('registerError').textContent = result.message;
-            }
-        } catch(err) {
-            document.getElementById('registerError').textContent = 'Terjadi kesalahan';
-        }
+    const fullname = document.getElementById('regFullname').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const phone = document.getElementById('regPhone').value.trim();
+    const gender = document.getElementById('regGender').value;
+    const username = document.getElementById('regUsername').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const role = document.getElementById('regRole').value;
+    
+    // Reset error dan success
+    document.getElementById('registerError').textContent = '';
+    document.getElementById('registerSuccess').textContent = '';
+    
+    // Validasi field wajib
+    if (!fullname || !email || !username || !password) {
+        document.getElementById('registerError').textContent = 'Nama lengkap, email, username, dan password harus diisi!';
+        return;
     }
+    
+    // Validasi email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        document.getElementById('registerError').textContent = 'Format email tidak valid! Contoh: nama@domain.com';
+        return;
+    }
+    
+    if (password.length < 4) {
+        document.getElementById('registerError').textContent = 'Password minimal 4 karakter!';
+        return;
+    }
+    
+    // Validasi nomor telepon (opsional, tapi jika diisi harus angka)
+    if (phone && !/^[0-9+\-\s]+$/.test(phone)) {
+        document.getElementById('registerError').textContent = 'Nomor telepon hanya boleh berisi angka, +, -, dan spasi!';
+        return;
+    }
+    
+    try {
+        const response = await fetch('login_api.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                action: 'register', 
+                fullname: fullname,
+                email: email,
+                phone: phone,
+                gender: gender,
+                username: username, 
+                password: password,
+                role: role
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            document.getElementById('registerSuccess').textContent = result.message;
+            // Auto-fill ke form login
+            document.getElementById('loginUsername').value = username;
+            // Reset form register
+            document.getElementById('regFullname').value = '';
+            document.getElementById('regEmail').value = '';
+            document.getElementById('regPhone').value = '';
+            document.getElementById('regGender').value = '';
+            document.getElementById('regUsername').value = '';
+            document.getElementById('regPassword').value = '';
+            // Kembali ke form login setelah 2 detik
+            setTimeout(() => {
+                showLoginForm();
+                document.getElementById('loginError').textContent = '✅ Akun berhasil dibuat! Silakan login.';
+            }, 2000);
+        } else {
+            document.getElementById('registerError').textContent = result.message;
+        }
+    } catch (err) {
+        document.getElementById('registerError').textContent = 'Terjadi kesalahan. Silakan coba lagi.';
+    }
+}
 
     function logout() {
         if (confirm('Apakah Anda yakin ingin logout?')) {
