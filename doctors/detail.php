@@ -12,11 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 require_once '../config/database.php';
 
-<<<<<<< HEAD
 // --- VALIDASI API KEY (Tangguh/Robust) ---
-=======
-/// --- VALIDASI API KEY (Tangguh/Robust) ---
->>>>>>> aa3acdfd6e5f89490c261902a108835311ace018
 $provided_key = '';
 if (function_exists('getallheaders')) {
     foreach (getallheaders() as $key => $value) {
@@ -64,10 +60,5 @@ if ($method === 'GET') {
         exit();
     }
 
-<<<<<<< HEAD
     echo json_encode(['success' => true, 'data' => $doctor]);
 }
-=======
-        echo json_encode(['success' => true, 'data' => $doctor]);
-    }
->>>>>>> aa3acdfd6e5f89490c261902a108835311ace018

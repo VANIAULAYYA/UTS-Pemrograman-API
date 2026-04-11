@@ -9,10 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> aa3acdfd6e5f89490c261902a108835311ace018
 require_once '../config/database.php';
 
 // --- VALIDASI API KEY (Tangguh/Robust) ---

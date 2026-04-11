@@ -3,11 +3,7 @@
 $host     = 'localhost';
 $db_name  = 'hospital_api';
 $username = 'root';
-<<<<<<< HEAD
 $password = '110505'; // sesuaikan dengan password MySQL kamu
-=======
-$password = ''; // sesuaikan dengan password MySQL kamu
->>>>>>> aa3acdfd6e5f89490c261902a108835311ace018
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8", $username, $password);
