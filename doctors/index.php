@@ -10,7 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
+<<<<<<< HEAD
 require_once '../config/database.php';
+=======
+require_once '../database.php';
+>>>>>>> aa3acdfd6e5f89490c261902a108835311ace018
 
 // --- VALIDASI API KEY (Tangguh/Robust) ---
 $provided_key = '';
@@ -76,6 +80,7 @@ elseif ($method === 'POST') {
     $stmt = $pdo->prepare("INSERT INTO doctors (name, specialization, phone) VALUES (?, ?, ?)");
     $stmt->execute([$name, $specialization, $phone]);
 
+<<<<<<< HEAD
     http_response_code(201);
     echo json_encode([
         'success' => true,
@@ -88,3 +93,18 @@ elseif ($method === 'POST') {
         ]
     ]);
 }
+=======
+        http_response_code(201);
+        echo json_encode([
+            'success' => true,
+            'message' => 'Dokter berhasil ditambahkan',
+            'data'    => [
+                'id'             => $pdo->lastInsertId(),
+                'name'           => $name,
+                'specialization' => $specialization,
+                'phone'          => $phone,
+            ]
+        ]);
+    }
+    ?>
+>>>>>>> aa3acdfd6e5f89490c261902a108835311ace018
