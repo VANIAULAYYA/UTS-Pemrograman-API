@@ -94,3 +94,20 @@ insert  into `patients`(`id`,`name`,`nik`,`birth_date`,`gender`,`phone`,`address
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
+
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    fullname VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    gender VARCHAR(20),
+    role VARCHAR(20),
+    api_key VARCHAR(100) UNIQUE,
+    is_active TINYINT(1) DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
