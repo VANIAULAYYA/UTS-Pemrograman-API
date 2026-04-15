@@ -2,7 +2,7 @@
 $host     = 'localhost';
 $db_name  = 'hospital_api';  // nama database di MySQL
 $username = 'root';
-$password = '110505'; // kosongkan jika tidak ada password
+$password = ''; // kosongkan jika tidak ada password
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db_name;charset=utf8", $username, $password);

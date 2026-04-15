@@ -21,73 +21,77 @@
     </div>
 
     <!-- 🎯 LANDING PAGE  -->
-    <div id="landingPage">
-        <div class="landing-inner">
-            <span class="landing-emoji">🏥</span>
-            <h1>Hospital Management System <span>API Hub</span></h1>
-            <p class="landing-subtitle">Platform API untuk mengelola data pasien, dokter, dan appointment secara
-                real-time</p>
-            <p class="landing-desc">Gunakan berbagai endpoint API untuk melakukan operasi CRUD dengan mudah. Untuk
-                mengakses API, silakan login atau daftar terlebih dahulu untuk mendapatkan API KEY.</p>
+<div id="landingPage">
+    <div class="landing-inner">
+        <span class="landing-emoji">🏥</span>
+        <h1>Hospital Management System <span>API Hub</span></h1>
+        <p class="landing-subtitle">Platform API untuk mengelola data pasien, dokter, appointment, dan user secara
+            real-time</p>
+        <p class="landing-desc">Gunakan berbagai endpoint API untuk melakukan operasi CRUD dengan mudah. Untuk
+            mengakses API, silakan login atau daftar terlebih dahulu untuk mendapatkan API KEY.</p>
 
-            <!-- 4 Info Cards -->
-            <div class="landing-cards">
-                <div class="landing-card">
-                    <span class="card-icon">📊</span>
-                    <h3>12 API Endpoints</h3>
-                    <p>Endpoint lengkap untuk semua resource</p>
-                </div>
-                <div class="landing-card">
-                    <span class="card-icon">⚡</span>
-                    <h3>GET, POST, PUT, DELETE</h3>
-                    <p>Mendukung semua metode HTTP</p>
-                </div>
-                <div class="landing-card">
-                    <span class="card-icon">🔐</span>
-                    <h3>Secure API Key</h3>
-                    <p>Autentikasi aman dengan API Key</p>
-                </div>
-                <div class="landing-card">
-                    <span class="card-icon">📡</span>
-                    <h3>Real-time Database</h3>
-                    <p>Data terupdate secara langsung</p>
-                </div>
+        <!-- 4 Info Cards -->
+        <div class="landing-cards">
+            <div class="landing-card">
+                <span class="card-icon">📊</span>
+                <h3 id="landing-total-endpoints">Memuat...</h3>
+                <p>Endpoint lengkap untuk semua resource</p>
             </div>
-
-            <!-- Access Box -->
-            <div class="landing-access-box">
-                🔑 <strong>Anda harus login terlebih dahulu untuk mendapatkan API KEY.</strong><br>
-                API KEY digunakan untuk mengakses semua endpoint dalam sistem ini.
+            <div class="landing-card">
+                <span class="card-icon">⚡</span>
+                <h3 id="landing-http-methods">Memuat...</h3>
+                <p>Mendukung semua metode HTTP</p>
             </div>
-
-            <!-- CTA Buttons -->
-            <div class="landing-cta">
-                <button class="cta-login" onclick="showLoginModal()">🔐 Login</button>
-                <button class="cta-register" onclick="openRegisterDirectly()">📝 Daftar</button>
+            <div class="landing-card">
+                <span class="card-icon">🔐</span>
+                <h3>Secure API Key</h3>
+                <p>Autentikasi aman dengan API Key</p>
             </div>
+            <div class="landing-card">
+                <span class="card-icon">📡</span>
+                <h3 id="landing-total-resources">Memuat...</h3>
+                <p>Database real-time</p>
+            </div>
+        </div>
 
-            <!-- API Preview -->
-            <div class="landing-preview">
-                <h4>📋 Preview Endpoints</h4>
-                <div class="preview-line">
-                    <span class="preview-method get">GET</span>
-                    <span class="preview-path">/patients</span>
-                </div>
-                <div class="preview-line">
-                    <span class="preview-method post">POST</span>
-                    <span class="preview-path">/doctors</span>
-                </div>
-                <div class="preview-line">
-                    <span class="preview-method put">PUT</span>
-                    <span class="preview-path">/appointments</span>
-                </div>
-                <div class="preview-line">
-                    <span class="preview-method delete">DELETE</span>
-                    <span class="preview-path">/patients/{id}</span>
-                </div>
+        <!-- Access Box -->
+        <div class="landing-access-box">
+            🔑 <strong>Anda harus login terlebih dahulu untuk mendapatkan API KEY.</strong><br>
+            API KEY digunakan untuk mengakses semua endpoint dalam sistem ini.
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="landing-cta">
+            <button class="cta-login" onclick="showLoginModal()">🔐 Login</button>
+            <button class="cta-register" onclick="openRegisterDirectly()">📝 Daftar</button>
+        </div>
+
+        <!-- API Preview -->
+        <div class="landing-preview">
+            <h4>📋 Preview Endpoints</h4>
+            <div class="preview-line">
+                <span class="preview-method get">GET</span>
+                <span class="preview-path">/patients</span>
+            </div>
+            <div class="preview-line">
+                <span class="preview-method post">POST</span>
+                <span class="preview-path">/doctors</span>
+            </div>
+            <div class="preview-line">
+                <span class="preview-method put">PUT</span>
+                <span class="preview-path">/appointments</span>
+            </div>
+            <div class="preview-line">
+                <span class="preview-method delete">DELETE</span>
+                <span class="preview-path">/patients/{id}</span>
+            </div>
+            <div class="preview-line">
+                <span class="preview-method get">GET</span>
+                <span class="preview-path">/users</span>
             </div>
         </div>
     </div>
+</div>
 
     <!-- OLD landing page (hidden, kept for backward compatibility) -->
     <div id="landing-page" style="display:none;"></div>
@@ -95,25 +99,87 @@
     <!-- Stats Container yang akan berubah per tab -->
     <div id="dashboard-container" style="display: none;">
 
-        <!-- User Profile Header terpisah dari Navbar -->
-        <div class="user-dashboard-header" id="userDashboardHeader">
-            <div class="user-dashboard-profile">
-                <div class="user-avatar">👤</div>
-                <div class="user-details">
-                    <div class="user-greeting">Selamat datang, <span id="username"></span>!</div>
-                    <div class="user-meta">
+       <!-- User Profile Header terpisah dari Navbar -->
+<div class="user-dashboard-header" id="userDashboardHeader">
+    <div class="user-dashboard-profile">
+        <div class="user-avatar" onclick="showProfile()">👤</div>
+        <div class="user-details">
+            <div class="user-greeting">Selamat datang, <span id="username"></span>!</div>
+            <div class="user-meta">
                         <span id="userRoleDisplay" class="role-badge"></span>
-                        <span id="apiKeyDisplay" class="api-key-badge" onclick="copyApiKey()"
-                            title="Klik untuk menyalin"></span>
                     </div>
-                </div>
-            </div>
-            <div class="user-dashboard-actions">
-                <a href="javascript:void(0)" onclick="logout()" class="logout-btn-new">🚪 Logout</a>
+        </div>
+    </div>
+    <div class="user-dashboard-actions">
+        <a href="javascript:void(0)" onclick="logout()" class="logout-btn-new">🚪 Logout</a>
+    </div>
+</div>
+
+<!-- Modal Profil User -->
+<div id="profileModal" class="modal" style="display: none;">
+    <div class="modal-content" style="max-width: 550px;">
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0; color: #1a73e8;">👤 Profil Saya</h2>
+            <span onclick="closeProfileModal()" style="cursor: pointer; font-size: 24px; color: #888; font-weight: bold; transition: 0.2s;">&times;</span>
+        </div>
+        
+        <!-- Avatar -->
+        <div class="profile-avatar">
+            <div class="profile-avatar-circle">
+                👤
             </div>
         </div>
-
-        <div id="stats-container"></div>
+        
+        <!-- Biodata -->
+        <div class="profile-info">
+            <div class="profile-row">
+                <div class="profile-label">Username</div>
+                <div class="profile-value" id="profileUsername">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Nama Lengkap</div>
+                <div class="profile-value" id="profileFullname">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Email</div>
+                <div class="profile-value" id="profileEmail">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Nomor Telepon</div>
+                <div class="profile-value" id="profilePhone">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Jenis Kelamin</div>
+                <div class="profile-value" id="profileGender">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Role</div>
+                <div class="profile-value" id="profileRole">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Status Akun</div>
+                <div class="profile-value" id="profileStatus">-</div>
+            </div>
+            <div class="profile-row">
+                <div class="profile-label">Tanggal Daftar</div>
+                <div class="profile-value" id="profileCreatedAt">-</div>
+            </div>
+        </div>
+        
+        <!-- API Key -->
+        <div class="api-key-container">
+            <span class="api-key-label">🔑 API Key</span>
+            <span class="api-key-value" id="profileApiKey">-</span>
+            <button onclick="copyProfileApiKey()" class="btn-copy-api">📋 Copy</button>
+        </div>
+        
+        <!-- Tombol Tutup -->
+        <div style="margin-top: 25px; text-align: center;">
+            <button onclick="closeProfileModal()" class="btn-close-modal">Tutup</button>
+        </div>
+    </div>
+</div>
 
         <!-- Tab Navigation -->
         <div class="tab-container">
@@ -123,7 +189,8 @@
             <button class="tab-btn" onclick="showTab('tryit')">🔥 Try It Out</button>
         </div>
 
-        <!-- Tab: Data Pasien -->
+
+   <!-- Tab: Data Pasien -->
         <div id="tab-patients" class="tab-content active">
             <div class="section">
                 <div class="section-title">
@@ -216,166 +283,236 @@
                 </div>
 
                 <!-- Patients API -->
-                <div class="resource-group">
-                    <div class="resource-header">
-                        <span class="resource-icon">👤</span>
-                        <h3>Patients</h3>
-                        <span class="resource-count">6 endpoints</span>
-                        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 3, POST: 1, PUT: 1, DELETE:
-                            1)</span>
-                    </div>
-                    <div class="endpoints-container">
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/index.php</span>
-                            <span class="desc">Ambil semua pasien</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/patients/index.php', null)">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/detail.php?id=1</span>
-                            <span class="desc">Ambil pasien by ID</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/detail.php?id=1">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/patients/detail.php', 'id=1')">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/index.php?search=nama</span>
-                            <span class="desc">Search pasien</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/index.php?search=nama">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/patients/index.php', 'search=nama')">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method post">POST</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/index.php</span>
-                            <span class="desc">Tambah pasien baru</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('POST', 'http://localhost/ETS_PEMAPI/patients/index.php', null, '{\n    "
-                                name": "Pasien Baru" ,\n "nik" : "1234567890123456" ,\n "birth_date" : "1995-05-15"
-                                ,\n "gender" : "Laki-laki" ,\n "phone" : "08123456789" ,\n "address"
-                                : "Jl. Contoh No. 123" \n}')">🔥 Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method put">PUT</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/detail.php?id=1</span>
-                            <span class="desc">Update data pasien</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/detail.php?id=1">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('PUT', 'http://localhost/ETS_PEMAPI/patients/detail.php', 'id=1', '{\n    "
-                                name": "Nama Update" ,\n "phone" : "08987654321" ,\n "address" : "Alamat Baru" \n}')">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method delete">DELETE</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/patients/detail.php?id=1</span>
-                            <span class="desc">Hapus pasien</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/patients/detail.php?id=1">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('DELETE', 'http://localhost/ETS_PEMAPI/patients/detail.php', 'id=1')">🔥
-                                Try</button>
-                        </div>
-                    </div>
-                </div>
+<div class="resource-group">
+    <div class="resource-header">
+        <span class="resource-icon">👤</span>
+        <h3>Patients</h3>
+        <span class="resource-count">6 endpoints</span>
+        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 3, POST: 1, PUT: 1, DELETE: 1)</span>
+    </div>
+    <div class="endpoints-container">
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/patients/index.php</span>
+            <span class="desc">Ambil semua pasien</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/index.php">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/patients/index.php', null, null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/patients/detail.php?id=1</span>
+            <span class="desc">Ambil pasien by ID</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/patients/detail.php', 'id=1', null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/patients/index.php?search=nama</span>
+            <span class="desc">Search pasien</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/index.php?search=nama">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/patients/index.php', 'search=nama', null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method post">POST</span>
+            <span class="url">http://localhost/hospital_api/patients/index.php</span>
+            <span class="desc">Tambah pasien baru</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/index.php">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("POST", "http://localhost/hospital_api/patients/index.php", null, `{
+    "name": "Masukkan name",
+    "nik": "Masukkan nik",
+    "birth_date": "masukkan birth_date",
+    "gender": "Ketik salah satu (Laki-laki/Perempuan)",
+    "phone": "Masukkan phone",
+    "address": "Masukkan address"
+}`)'>🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method put">PUT</span>
+            <span class="url">http://localhost/hospital_api/patients/detail.php?id=1</span>
+            <span class="desc">Update data pasien</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("PUT", "http://localhost/hospital_api/patients/detail.php", "id=1", `{
+    "name": "Masukkan name baru",
+    "nik": "Masukkan nik baru",
+    "birth_date": "masukkan birth_date baru",
+    "gender": "Ketik salah satu (Laki-laki/Perempuan)",
+    "phone": "Masukkan phone baru",
+    "address": "Masukkan address baru"
+}`)'>🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method delete">DELETE</span>
+            <span class="url">http://localhost/hospital_api/patients/detail.php?id=1</span>
+            <span class="desc">Hapus pasien</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/patients/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('DELETE', 'http://localhost/hospital_api/patients/detail.php', 'id=1', null)">🔥 Try</button>
+        </div>
+    </div>
+</div>
 
                 <!-- Doctors API -->
-                <div class="resource-group">
-                    <div class="resource-header">
-                        <span class="resource-icon">👨‍⚕️</span>
-                        <h3>Doctors</h3>
-                        <span class="resource-count">3 endpoints</span>
-                        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 2, POST: 1)</span>
-                    </div>
-                    <div class="endpoints-container">
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/doctors/index.php</span>
-                            <span class="desc">Ambil semua dokter</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/doctors/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/doctors/index.php', null)">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/doctors/detail.php?id=1</span>
-                            <span class="desc">Ambil dokter by ID</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/doctors/detail.php?id=1">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/doctors/detail.php', 'id=1')">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method post">POST</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/doctors/index.php</span>
-                            <span class="desc">Tambah dokter baru</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/doctors/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('POST', 'http://localhost/ETS_PEMAPI/doctors/index.php', null, '{\n    "
-                                name": "dr. Budi Santoso" ,\n "specialization" : "Umum" ,\n "phone" : "08123456789"
-                                \n}')">🔥 Try</button>
-                        </div>
-                    </div>
-                </div>
+<div class="resource-group">
+    <div class="resource-header">
+        <span class="resource-icon">👨‍⚕️</span>
+        <h3>Doctors</h3>
+        <span class="resource-count">3 endpoints</span>
+        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 2, POST: 1)</span>
+    </div>
+    <div class="endpoints-container">
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/doctors/index.php</span>
+            <span class="desc">Ambil semua dokter</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/doctors/index.php">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/doctors/index.php', null, null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/doctors/detail.php?id=1</span>
+            <span class="desc">Ambil dokter by ID</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/doctors/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/doctors/detail.php', 'id=1', null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method post">POST</span>
+            <span class="url">http://localhost/hospital_api/doctors/index.php</span>
+            <span class="desc">Tambah dokter baru</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/doctors/index.php">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("POST", "http://localhost/hospital_api/doctors/index.php", null, `{
+    "name": "Masukkan name",
+    "specialization": "Masukkan specialization",
+    "phone": "Masukkan phone"
+}`)'>🔥 Try</button>
+        </div>
+    </div>
+</div>
 
                 <!-- Appointments API -->
-                <div class="resource-group">
-                    <div class="resource-header">
-                        <span class="resource-icon">📅</span>
-                        <h3>Appointments</h3>
-                        <span class="resource-count">3 endpoints</span>
-                        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 1, POST: 1, PUT: 1)</span>
-                    </div>
-                    <div class="endpoints-container">
-                        <div class="endpoint-card">
-                            <span class="method get">GET</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/appointments/index.php</span>
-                            <span class="desc">Ambil semua appointments</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/appointments/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('GET', 'http://localhost/ETS_PEMAPI/appointments/index.php', null)">🔥
-                                Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method post">POST</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/appointments/index.php</span>
-                            <span class="desc">Buat appointment baru</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/appointments/index.php">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('POST', 'http://localhost/ETS_PEMAPI/appointments/index.php', null, '{\n    "
-                                patient_id": 1,\n "doctor_id" : 1,\n "appointment_date" : "2024-12-25 10:00:00"
-                                ,\n "complaint" : "Demam dan batuk" ,\n "status" : "pending" \n}')">🔥 Try</button>
-                        </div>
-                        <div class="endpoint-card">
-                            <span class="method put">PUT</span>
-                            <span class="url">http://localhost/ETS_PEMAPI/appointments/detail.php?id=1</span>
-                            <span class="desc">Update status appointment</span>
-                            <button class="copy-btn"
-                                data-url="http://localhost/ETS_PEMAPI/appointments/detail.php?id=1">Copy</button>
-                            <button class="try-btn"
-                                onclick="tryThisEndpoint('PUT', 'http://localhost/ETS_PEMAPI/appointments/detail.php', 'id=1', '{\n    "
-                                status": "done" \n}')">🔥 Try</button>
-                        </div>
-                    </div>
-                </div>
+<div class="resource-group">
+    <div class="resource-header">
+        <span class="resource-icon">📅</span>
+        <h3>Appointments</h3>
+        <span class="resource-count">3 endpoints</span>
+        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 1, POST: 1, PUT: 1)</span>
+    </div>
+    <div class="endpoints-container">
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/appointments/index.php</span>
+            <span class="desc">Ambil semua appointments</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/appointments/index.php">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/appointments/index.php', null, null)">🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method post">POST</span>
+            <span class="url">http://localhost/hospital_api/appointments/index.php</span>
+            <span class="desc">Buat appointment baru</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/appointments/index.php">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("POST", "http://localhost/hospital_api/appointments/index.php", null, `{
+    "patient_id": "Masukkan patient_id",
+    "doctor_id": "Masukkan doctor_id",
+    "appointment_date": "Masukkan appointment_date",
+    "complaint": "Masukkan complain",
+    "status": "Masukkan status"
+}`)'>🔥 Try</button>
+        </div>
+        <div class="endpoint-card">
+            <span class="method put">PUT</span>
+            <span class="url">http://localhost/hospital_api/appointments/detail.php?id=1</span>
+            <span class="desc">Update status appointment</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/appointments/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("PUT", "http://localhost/hospital_api/appointments/detail.php", "id=1", `{
+    "patient_id": "Masukkan patient_id baru",
+    "doctor_id": "Masukkan doctor_id baru",
+    "appointment_date": "Masukkan appointment_date baru",
+    "complaint": "Masukkan complain baru",
+    "status": "Masukkan status baru"
+}`)'>🔥 Try</button>
+        </div>
+    </div>
+</div>
+
+                 <!-- Users API -->
+<div class="resource-group">
+    <div class="resource-header">
+        <span class="resource-icon">👥</span>
+        <h3>Users</h3>
+        <span class="resource-count">6 endpoints</span>
+        <span style="font-size: 11px; color: #888; margin-left: 8px;">(GET: 3, POST: 1, PUT: 1, DELETE: 1)</span>
+    </div>
+    <div class="endpoints-container">
+        <!-- GET All Users -->
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/users/index.php</span>
+            <span class="desc">Ambil semua user</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/index.php">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/users/index.php', null, null)">🔥 Try</button>
+        </div>
+        
+        <!-- GET User by ID -->
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/users/detail.php?id=1</span>
+            <span class="desc">Ambil user by ID</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/users/detail.php', 'id=1', null)">🔥 Try</button>
+        </div>
+        
+        <!-- GET Search User -->
+        <div class="endpoint-card">
+            <span class="method get">GET</span>
+            <span class="url">http://localhost/hospital_api/users/index.php?search=username</span>
+            <span class="desc">Search user</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/index.php?search=username">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('GET', 'http://localhost/hospital_api/users/index.php', 'search=username', null)">🔥 Try</button>
+        </div>
+        
+        <!-- POST Create New User -->
+        <div class="endpoint-card">
+            <span class="method post">POST</span>
+            <span class="url">http://localhost/hospital_api/users/index.php</span>
+            <span class="desc">Tambah user baru</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/index.php">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("POST", "http://localhost/hospital_api/users/index.php", null, `{
+    "username": "Masukkan username",
+    "fullname": "Masukkan fullname",
+    "email": "Masukkan email",
+    "phone": "Masukkan phone",
+    "gender": "Ketik salah satu (Laki-laki/Perempuan)",
+    "password": "Masukkan password",
+    "role": "Ketik salah satu (admin/staff/doctor)"
+}`)'>🔥 Try</button>
+        </div>
+        
+        <!-- PUT Update User -->
+        <div class="endpoint-card">
+            <span class="method put">PUT</span>
+            <span class="url">http://localhost/hospital_api/users/detail.php?id=1</span>
+            <span class="desc">Update user</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick='tryThisEndpoint("PUT", "http://localhost/hospital_api/users/detail.php", "id=1", `{
+    "fullname": "Masukkan nama lengkap baru",
+    "email": "Masukkan email baru",
+    "phone": "Masukkan nomor telepon baru",
+    "gender": "Laki-laki/Perempuan",
+    "role": "admin/staff/doctor",
+    "is_active": 1,
+    "password": "Masukkan password baru"
+}`)'>🔥 Try</button>
+        </div>
+        
+        <!-- DELETE User -->
+        <div class="endpoint-card">
+            <span class="method delete">DELETE</span>
+            <span class="url">http://localhost/hospital_api/users/detail.php?id=1</span>
+            <span class="desc">Hapus user</span>
+            <button class="copy-btn" data-url="http://localhost/hospital_api/users/detail.php?id=1">Copy</button>
+            <button class="try-btn" onclick="tryThisEndpoint('DELETE', 'http://localhost/hospital_api/users/detail.php', 'id=1', null)">🔥 Try</button>
+        </div>
+        
+    </div>
+</div>
             </div>
         </div>
 
@@ -403,7 +540,7 @@
                         <span style="font-size: 13px; color: #555;">Menghapus data</span>
                     </div>
                     <div class="total-info">
-                        📊 <strong>12 Endpoints</strong> | 4 Methods | 3 Resources
+                        📊 <strong>18 Endpoints</strong> | 4 Methods | 4 Resources
                     </div>
                 </div>
 
@@ -420,18 +557,14 @@
                             <option value="DELETE">DELETE</option>
                         </select>
                         <input type="text" id="try-url" class="tryit-url" placeholder="URL Endpoint"
-                            value="http://localhost/ETS_PEMAPI/patients/index.php">
+                            value="http://localhost/hospital_api/patients/index.php">
                     </div>
                     <div class="tryit-row">
                         <input type="text" id="try-params" placeholder="Query Parameters (contoh: id=1&search=nama)"
                             style="width: 100%;">
                     </div>
                     <div>
-                        <textarea id="try-body" class="json-editor" placeholder='Body JSON untuk POST/PUT request (contoh):
-{
-    "name": "Nama Baru",
-    "specialization": "Spesialisasi"
-}'></textarea>
+                        <textarea id="try-body" class="json-editor" placeholder='Body JSON untuk POST/PUT '></textarea>
                     </div>
                     <div style="margin-top: 15px;">
                         <button class="send-btn" onclick="sendRequest()">🚀 Send Request</button>
