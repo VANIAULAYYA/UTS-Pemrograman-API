@@ -54,7 +54,8 @@ if (!$id) {
 
 // GET user by ID
 if ($method === 'GET') {
-    $stmt = $pdo->prepare("SELECT id, username, fullname, email, phone, gender, role, is_active, created_at 
+    // ✅ TAMBAHKAN api_key DI SELECT
+    $stmt = $pdo->prepare("SELECT id, username, fullname, email, phone, gender, role, is_active, created_at, api_key 
         FROM users WHERE id = ?");
     $stmt->execute([$id]);
     $user = $stmt->fetch();
@@ -65,7 +66,7 @@ if ($method === 'GET') {
         exit();
     }
 
-    // HAPUS PASSWORD DARI RESPONSE (jangan dikirim)
+    // Hapus password dari response (jangan dikirim)
     unset($user['password']);
     
     echo json_encode(['success' => true, 'data' => $user]);
