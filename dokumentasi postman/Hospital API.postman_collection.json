@@ -1,0 +1,1894 @@
+{
+  "info": {
+    "_postman_id": "265dfd9c-03bb-4cb3-b59c-4c81c1aec9f3",
+    "name": "Hospital API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49156647",
+    "_collection_link": "https://go.postman.co/collection/49156647-265dfd9c-03bb-4cb3-b59c-4c81c1aec9f3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Patients",
+      "item": [
+        {
+          "name": "Pasien by= ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "API_KEY",
+                "value": "103fb59fb2a4ad13be3c62bec8cb81c5",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/patients/detail.php?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Pasien by= ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/patients/detail.php?id=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:03:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 5,\n    \"name\": \"Park Chanyeol\",\n    \"nik\": \"199211278080\",\n    \"birth_date\": \"1992-11-27\",\n    \"gender\": \"Laki-laki\",\n    \"phone\": \"08123456789\",\n    \"address\": \"Kemang\",\n    \"created_at\": \"2026-04-16 09:16:50\",\n    \"updated_at\": \"2026-04-16 09:16:50\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Semua Pasien",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/patients/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Semua Pasien",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/patients/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:10:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Siti Rahayu\",\n            \"nik\": \"3578010202000002\",\n            \"birth_date\": \"2000-02-02\",\n            \"gender\": \"Perempuan\",\n            \"phone\": \"085222222222\",\n            \"address\": \"Jl. Gubeng No. 5\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dewi Putri\",\n            \"nik\": \"3578010303010003\",\n            \"birth_date\": \"2001-03-03\",\n            \"gender\": \"Perempuan\",\n            \"phone\": \"085333333333\",\n            \"address\": \"Jl. Pemuda No. 15 Surabaya\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Ooh Sehun Update\",\n            \"nik\": \"1234567890123456\",\n            \"birth_date\": \"1995-05-15\",\n            \"gender\": \"Laki-laki\",\n            \"phone\": \"08123456789\",\n            \"address\": \"Surabaya\",\n            \"created_at\": \"2026-04-15 14:58:54\",\n            \"updated_at\": \"2026-04-16 09:36:20\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Park Chanyeol\",\n            \"nik\": \"199211278080\",\n            \"birth_date\": \"1992-11-27\",\n            \"gender\": \"Laki-laki\",\n            \"phone\": \"08123456789\",\n            \"address\": \"Kemang\",\n            \"created_at\": \"2026-04-16 09:16:50\",\n            \"updated_at\": \"2026-04-16 09:16:50\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Pasien (nama)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/patients/index.php?search=Dewi Putri",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Dewi Putri"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Pasien (nama)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/patients/index.php?search=Dewi Putri",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "index.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "Dewi Putri"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:04:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Dewi Putri\",\n            \"nik\": \"3578010303010003\",\n            \"birth_date\": \"2001-03-03\",\n            \"gender\": \"Perempuan\",\n            \"phone\": \"085333333333\",\n            \"address\": \"Jl. Pemuda No. 15 Surabaya\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Pasien Baru",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Ooh Sehun\",\r\n  \"nik\": \"19921127821\",\r\n  \"birth_date\": \"1992-11-27\",\r\n  \"gender\": \"Laki-Laki\",\r\n  \"phone\": \"08123456789\",\r\n  \"address\": \"Surabaya\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/patients/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Pasien Baru",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Ooh Sehun\",\r\n  \"nik\": \"19921127821\",\r\n  \"birth_date\": \"1992-11-27\",\r\n  \"gender\": \"Laki-Laki\",\r\n  \"phone\": \"08123456789\",\r\n  \"address\": \"Surabaya\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/patients/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:05:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Pasien berhasil ditambahkan\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Pasien",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Park Chanyeol Updated\",\r\n  \"nik\": \"199211278080\",\r\n  \"birth_date\": \"1992-11-27\",\r\n  \"gender\": \"Laki-Laki\",\r\n  \"phone\": \"08123456789\",\r\n  \"address\": \"Kemang\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/patients/detail.php?id=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Pasien",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Ooh Sehun Update\",\r\n  \"nik\": \"19921127821\",\r\n  \"birth_date\": \"1994-11-27\",\r\n  \"gender\": \"Laki-Laki\",\r\n  \"phone\": \"08123456789\",\r\n  \"address\": \"Malang\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/patients/detail.php?id=8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "8"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:05:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Update berhasil\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Hapus Pasien",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/patients/detail.php?id=7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "patients",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Hapus Pasien",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/patients/detail.php?id=8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "patients",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "8"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:06:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Data dihapus\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doctors",
+      "item": [
+        {
+          "name": "Semua Dokter",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/doctors/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "doctors",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Semua Dokter",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/doctors/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "doctors",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:06:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"dr. Andi Wijaya\",\n            \"specialization\": \"Umum\",\n            \"phone\": \"081111111111\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"dr. Sari Dewi\",\n            \"specialization\": \"Anak\",\n            \"phone\": \"082222222222\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"dr. Budi Santoso\",\n            \"specialization\": \"Jantung\",\n            \"phone\": \"083333333333\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"dr. Citra Lestari\",\n            \"specialization\": \"Kulit\",\n            \"phone\": \"084444444444\",\n            \"created_at\": \"2026-04-13 09:39:18\",\n            \"updated_at\": \"2026-04-13 09:39:18\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Dokter by=ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "52b04275d7ba8b1bdac6cbfe64c3fc05514e54828a8d213629abc78b22935147",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhosT:3000/doctors/detail.php?id=5",
+              "protocol": "http",
+              "host": [
+                "localhosT"
+              ],
+              "port": "3000",
+              "path": [
+                "doctors",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Dokter by=ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/doctors/detail.php?id=4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "doctors",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:07:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"dr. Citra Lestari\",\n        \"specialization\": \"Kulit\",\n        \"phone\": \"084444444444\",\n        \"created_at\": \"2026-04-13 09:39:18\",\n        \"updated_at\": \"2026-04-13 09:39:18\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Dokter Baru",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "api_key",
+                "value": "52b04275d7ba8b1bdac6cbfe64c3fc05514e54828a8d213629abc78b22935147",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Dr. Karina\",\r\n  \"specialization\": \"Kulit dan Kelamin\",\r\n  \"phone\": \"08123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/doctors/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "doctors",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Dokter Baru",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Dr. Karina\",\r\n  \"specialization\": \"Bedah\",\r\n  \"phone\": \"08123456789\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/doctors/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "doctors",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:09:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Dokter berhasil ditambahkan\",\n    \"data\": {\n        \"id\": \"5\",\n        \"name\": \"Dr. Karina\",\n        \"specialization\": \"Bedah\",\n        \"phone\": \"08123456789\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Appoinment",
+      "item": [
+        {
+          "name": "Semua Appoinment",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/appointments/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "appointments",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Semua Appoinment",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/appointments/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "appointments",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:09:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"patient_name\": \"Siti Rahayu\",\n            \"doctor_name\": \"dr. Sari Dewi\",\n            \"specialization\": \"Anak\",\n            \"appointment_date\": \"2025-04-05 10:00:00\",\n            \"complaint\": \"Kontrol rutin anak\",\n            \"status\": \"pending\"\n        },\n        {\n            \"id\": 4,\n            \"patient_name\": \"Dewi Putri\",\n            \"doctor_name\": \"dr. Andi Wijaya\",\n            \"specialization\": \"Umum\",\n            \"appointment_date\": \"2026-04-12 11:00:00\",\n            \"complaint\": \"Nyeri perut\",\n            \"status\": \"pending\"\n        },\n        {\n            \"id\": 5,\n            \"patient_name\": \"Park Chanyeol\",\n            \"doctor_name\": \"dr. Andi Wijaya\",\n            \"specialization\": \"Umum\",\n            \"appointment_date\": \"2026-04-20 09:30:00\",\n            \"complaint\": \"Sakit kepala dan demam sejak kemarin\",\n            \"status\": \"pending\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah Appoinment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/appointments/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "appointments",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah Appoinment",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"patient_id\": 3,\r\n  \"doctor_id\": 1,\r\n  \"appointment_date\": \"2026-04-20 09:30:00\",\r\n  \"complaint\": \"Sakit kepala dan demam sejak kemarin\",\r\n  \"status\": \"pending\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/appointments/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "appointments",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:10:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Appointment berhasil dibuat\",\n    \"data\": {\n        \"id\": \"8\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Appoinment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient_id\": 3,\r\n  \"doctor_id\": 1,\r\n  \"appointment_date\": \"2026-04-10 10:20:00\",\r\n  \"complaint\": \"Sakit kepala dan demam sejak kemarin\",\r\n  \"status\": \"done\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/appointments/detail.php?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "appointments",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Appoinment",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"patient_id\": 3,\r\n  \"doctor_id\": 1,\r\n  \"appointment_date\": \"2026-04-10 10:20:00\",\r\n  \"complaint\": \"Sakit kepala dan demam sejak kemarin\",\r\n  \"status\": \"done\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/appointments/detail.php?id=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "appointments",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 03:12:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Status appointment berhasil diupdate\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Semua User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x_api_key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Semua User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x_api_key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/users/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:55:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"total\": 6,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"admin\",\n            \"fullname\": \"Administrator\",\n            \"email\": \"admin@hospital.com\",\n            \"phone\": \"08123456789\",\n            \"gender\": \"Laki-laki\",\n            \"role\": \"admin\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-13 09:39:18\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"Putri\",\n            \"fullname\": \"putri rini\",\n            \"email\": \"putri@gmail.com\",\n            \"phone\": \"0845642\",\n            \"gender\": \"Perempuan\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-13 09:54:30\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"namauser_baru\",\n            \"fullname\": \"Nama Lengkap User\",\n            \"email\": \"email@domain.com\",\n            \"phone\": \"08123456789\",\n            \"gender\": \"Laki-laki\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-15 16:03:14\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"bebek\",\n            \"fullname\": \"bebek goreng\",\n            \"email\": \"bebek@gmail.com\",\n            \"phone\": \"123456\",\n            \"gender\": \"Laki-laki\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-15 22:57:13\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"dwiariy\",\n            \"fullname\": \"Dwi Ariyanti\",\n            \"email\": \"dwiari@gmail.com\",\n            \"phone\": \"089712456732\",\n            \"gender\": \"Perempuan\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-16 09:00:01\"\n        },\n        {\n            \"id\": 6,\n            \"username\": \"kh.anza\",\n            \"fullname\": \"Khanza Harunia\",\n            \"email\": \"khanzaha@gmail.com\",\n            \"phone\": \"089712456732\",\n            \"gender\": \"Perempuan\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-16 12:54:09\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "User by: ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/detail.php?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "User by: ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/users/detail.php?id=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:50:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"dwiariy\",\n        \"fullname\": \"Dwi Ariyanti\",\n        \"email\": \"dwiari@gmail.com\",\n        \"phone\": \"089712456732\",\n        \"gender\": \"Perempuan\",\n        \"role\": \"staff\",\n        \"is_active\": 1,\n        \"created_at\": \"2026-04-16 09:00:01\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Search User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/index.php?search=username",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "index.php"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "username"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Search User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/users/index.php?search=dwiariy",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "index.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "dwiariy"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:51:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"total\": 1,\n    \"data\": [\n        {\n            \"id\": 5,\n            \"username\": \"dwiariy\",\n            \"fullname\": \"Dwi Ariyanti\",\n            \"email\": \"dwiari@gmail.com\",\n            \"phone\": \"089712456732\",\n            \"gender\": \"Perempuan\",\n            \"role\": \"staff\",\n            \"is_active\": 1,\n            \"created_at\": \"2026-04-16 09:00:01\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Tambah User Baru",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/index.php",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "index.php"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Tambah User Baru",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"kh.anza\",\r\n    \"fullname\": \"Khanza Harunia\",\r\n    \"email\": \"khanzaha@gmail.com\",\r\n    \"phone\": \"089712456732\",\r\n    \"gender\": \"Perempuan\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"staff\",\r\n    \"is_active\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/users/index.php",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "index.php"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:54:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User berhasil ditambahkan\",\n    \"data\": {\n        \"id\": \"6\",\n        \"username\": \"kh.anza\",\n        \"fullname\": \"Khanza Harunia\",\n        \"email\": \"khanzaha@gmail.com\",\n        \"phone\": \"089712456732\",\n        \"gender\": \"Perempuan\",\n        \"role\": \"staff\",\n        \"is_active\": 1,\n        \"api_key\": \"cd90e170152ab5e376811401f389ceb591e1791b1d1bbdb6fcf652801dd5d9c4\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/detail.php?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update User",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "    {\r\n            \"username\": \"Thanya_Updatet\",\r\n            \"fullname\": \"bebek goreng\",\r\n            \"email\": \"bebek@gmail.com\",\r\n            \"phone\": \"123456\",\r\n            \"gender\": \"Laki-laki\",\r\n            \"role\": \"staff\",\r\n            \"is_active\": 1,\r\n            \"created_at\": \"2026-04-15 22:57:13\"\r\n    }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/users/detail.php?id=4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:56:44 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User berhasil diupdate\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Hapus User",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/users/detail.php?id=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Hapus User",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "x-api-key",
+                    "value": "76b9fdc797af9c453a6ff92b28922aabfdcf308a2fc6f5d35c9a3234dd553a4c",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/users/detail.php?id=4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "users",
+                    "detail.php"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "localhost:3000"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 16 Apr 2026 05:57:18 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Access-Control-Allow-Methods",
+                  "value": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+                {
+                  "key": "Access-Control-Allow-Headers",
+                  "value": "Content-Type, x-api-key, api_key, Authorization"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User berhasil dihapus\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
