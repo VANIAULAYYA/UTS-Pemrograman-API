@@ -127,6 +127,16 @@ function checkLoginStatus() {
             userRoleDisplay.textContent = role === 'doctor' ? '👨‍⚕️ Dokter' : (role === 'admin' ? '🛡️ Admin' : '📋 Staff');
         }
 
+        // ✅ TAMBAHKAN INI - Render stats sesuai tab yang aktif
+        const activeTab = document.querySelector('.tab-content.active')?.id;
+        if (activeTab === 'tab-patients') {
+            renderStats('patients');
+        } else if (activeTab === 'tab-doctors') {
+            renderStats('doctors');
+        } else {
+            renderStats('api'); // default untuk API Documentation / Try It Out
+        }
+
         loadPatients();
     } else {
         if (landingPage) landingPage.style.display = 'flex';
@@ -164,17 +174,45 @@ function renderStats(tabName) {
     if (!statsContainer) return;
 
     if (tabName === 'patients') {
-        statsContainer.innerHTML = `<div class="stats"><div class="stat-card patients"><h2 id="total-patients">-</h2><p>👤 Total Pasien</p></div></div>`;
-        loadPatients();
-    } else if (tabName === 'doctors') {
-        statsContainer.innerHTML = `<div class="stats"><div class="stat-card doctors"><h2 id="total-doctors">-</h2><p>👨‍⚕️ Total Dokter</p></div></div>`;
-        loadDoctors();
-    } else {
-        loadApiStats();
+        statsContainer.innerHTML = `
+            <div class="stats">
+                <div class="stat-card patients">
+                    <h2 id="total-patients">-</h2>
+                    <p>👤 Total Pasien</p>
+                </div>
+            </div>
+        `;
+    }
+    else if (tabName === 'doctors') {
+        statsContainer.innerHTML = `
+            <div class="stats">
+                <div class="stat-card doctors">
+                    <h2 id="total-doctors">-</h2>
+                    <p>👨‍⚕️ Total Dokter</p>
+                </div>
+            </div>
+        `;
+    }
+    else {
+        statsContainer.innerHTML = `
+            <div class="stats">
+                <div class="stat-card endpoints">
+                    <h2>18</h2>
+                    <p>🔌 Total Endpoints</p>
+                </div>
+                <div class="stat-card methods">
+                    <h2>4</h2>
+                    <p>⚡ HTTP Methods</p>
+                </div>
+                <div class="stat-card resources">
+                    <h2>4</h2>
+                    <p>📦 Total Resources</p>
+                </div>
+            </div>
+        `;
     }
 }
 
-// ============= TAB NAVIGATION =============
 function showTab(tabName) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -182,14 +220,15 @@ function showTab(tabName) {
     document.getElementById(`tab-${tabName}`).classList.add('active');
     event.target.classList.add('active');
 
-    // 🔥 TAMBAHKAN INI - Panggil fungsi sesuai tab yang aktif
+    // ✅ Panggil renderStats dulu (biar stats card langsung muncul)
+    renderStats(tabName);
+
+    // Kemudian load data
     if (tabName === 'patients') {
         loadPatients();
     } else if (tabName === 'doctors') {
         loadDoctors();
     }
-
-    renderStats(tabName);
 }
 
 // ============= TRY IT OUT FUNCTIONS =============
@@ -732,3 +771,4 @@ function closeProfileModal() {
         modal.style.display = 'none';
     }
 }
+

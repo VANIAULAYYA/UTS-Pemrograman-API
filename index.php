@@ -96,8 +96,6 @@
     <!-- OLD landing page (hidden, kept for backward compatibility) -->
     <div id="landing-page" style="display:none;"></div>
 
-    <!-- Stats Container yang akan berubah per tab -->
-    <div id="dashboard-container" style="display: none;">
 
        <!-- User Profile Header terpisah dari Navbar -->
 <div class="user-dashboard-header" id="userDashboardHeader">
@@ -177,6 +175,24 @@
         <!-- Tombol Tutup -->
         <div style="margin-top: 25px; text-align: center;">
             <button onclick="closeProfileModal()" class="btn-close-modal">Tutup</button>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Container yang akan berubah per tab -->
+    <div id="stats-container">
+    <div class="stats">
+        <div class="stat-card endpoints">
+            <h2>18</h2>
+            <p>🔌 Total Endpoints</p>
+        </div>
+        <div class="stat-card methods">
+            <h2>4</h2>
+            <p>⚡ HTTP Methods</p>
+        </div>
+        <div class="stat-card resources">
+            <h2>4</h2>
+            <p>📦 Total Resources</p>
         </div>
     </div>
 </div>
