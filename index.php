@@ -98,6 +98,7 @@
 
 
        <!-- User Profile Header terpisah dari Navbar -->
+<div id="dashboard-container" style="display: none;">
 <div class="user-dashboard-header" id="userDashboardHeader">
     <div class="user-dashboard-profile">
         <div class="user-avatar" onclick="showProfile()">👤</div>
@@ -611,6 +612,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <div class="footer">
         <p>Hospital Management System - API Documentation & Data Management © 2026</p>
